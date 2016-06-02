@@ -1,21 +1,28 @@
 let report={
+  reportMap: {},
   jasmineStarted: function(suiteInfo) {  //jasmine
-    console.log('jsamineStarted', suiteInfo);
+    // console.log('jsamineStarted', suiteInfo);
+    this.reportMap['jsamineStarted'] = 'Running suite with ' + suiteInfo.totalSpecsDefined;
   },
   suiteStarted: function(result) {  //describe
-    console.log('suiteStarted', result);
+    // console.log('suiteStarted', result);
+    this.reportMap.suiteStarted = 'Suite started: ' + result.description + ' whose full description is: ' + result.fullName;
   },
   specStarted: function(result) {  //it
-    console.log('specStarted', result);
+    // console.log('specStarted', result);
+    this.reportMap.specStarted = 'Spec started: ' + result.description + ' whose full description is: ' + result.fullName;
   },
-  specDDone: function(result) {
-    console.log('specDone', result);
+  specDone: function(result) {
+    // console.log('specDone', result);
+    this.reportMap.specDone = 'Spec: ' + result.description + ' was ' + result.status;
   },
   suiteDone: function(result) {
-    console.log('suiteDone', result);
+    // console.log('suiteDone', result);
+    this.reportMap.suiteDone = 'Suite: ' + result.description + ' was ' + result.status;
   },
-  jasmineDone: function(resulte) {
-    console.log('jasmineDone');
+  jasmineDone: function(result) {
+    // console.log('jasmineDone');
+    this.reportMap.jasmineDone = "jasmineDone";
   }
 };
 
