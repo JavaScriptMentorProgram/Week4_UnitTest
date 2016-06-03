@@ -6,7 +6,7 @@ var nodemailer = require("nodemailer");
 
 jasmine.loadConfigFile('spec/support/jasmine.json');
 
-var transporter = nodemailer.createTransport('smtps://wenjing.liu09%40gmail.com:mingjing905923@smtp.gmail.com');
+var transporter = nodemailer.createTransport('smtps://wenjing.liu09%40gmail.com:************@smtp.gmail.com');
 
 jasmine.onComplete(function(passed){
   if (passed) {
